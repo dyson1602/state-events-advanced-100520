@@ -1,10 +1,13 @@
 import React from "react";
 
-const BeyCard = () => {
+const BeyCard = (props) => {
   return (
-    <div className="card">
-
-    </div>
+    <>
+      <div className="card">
+        {props.beyObj.name}
+        <img src={props.beyObj.img} />
+      </div>
+    </>
   );
 };
 

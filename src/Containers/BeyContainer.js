@@ -4,9 +4,9 @@ import beyArray from '../api.js'
 
 class BeyContainer extends React.Component {
 
-
   render() {
-    let beyCards = beyArray.map(beyObj => <BeyCard key={beyObj.id} beyObj={beyObj} />)
+    console.log(beyArray)
+    let beyCards = this.props.beyArray.map(beyObj => <BeyCard key={beyObj.id} beyObj={beyObj} clickHandler={this.props.clickHandler}/>)
     return (
       <>
         <div className="index">

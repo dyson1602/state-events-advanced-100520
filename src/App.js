@@ -22,6 +22,17 @@ class App extends React.Component {
     })
    this.setState({beyArray: array})
   }
+  clickHandlerFav = (beyObj) => {
+    let array = this.state.beyArray.map(bO => {
+      if (bO.id === beyObj.id) {
+        bO.favorite = !bO.favorite
+        return bO
+      } else {
+        return bO
+      }
+    })
+   this.setState({beyArray: array})
+  }
 
   render() {
     console.log(this.state.beyArray)
@@ -29,7 +40,7 @@ class App extends React.Component {
       <>
         <div className="container" >
           <BeyContainer clickHandler={this.clickHandler} beyArray={this.state.beyArray} />
-          <Favorites clickHandler={this.clickHandler} beyArray={this.state.beyArray}/>
+          <Favorites clickHandler={this.clickHandlerFav} beyArray={this.state.beyArray}/>
         </div>
       </>
     )

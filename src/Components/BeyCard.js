@@ -3,7 +3,11 @@ import React from "react";
 class BeyCard extends React.Component {
 
   callFavoriteClickHandler = () => {
-    this.props.clickHandler(this.props.beyObj)
+    if (this.props.beyObj.favorite === false && this.props.clickHandler){
+      this.props.clickHandler(this.props.beyObj)
+    } else if (this.props.beyObj.favorite === true && this.props.clickHandlerFav){
+      this.props.clickHandlerFav(this.props.beyObj)
+    }
   }
 
   render() {
